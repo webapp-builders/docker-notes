@@ -7,7 +7,7 @@
 		<title>Docker Notes</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -36,6 +36,17 @@
 					<h3>These are our notes from the monthly meetups going through <a href="https://www.dockerbook.com/" target="_blank">The Docker Book</a></h3>
 				</section>
 				<section>
+					<h2>Table of Contents</h2>
+					<ul>
+						<li>
+							<a href="#january-2017">January 2017</a>
+						</li>
+					</ul>
+				</section>
+				<section id="january-2017">
+					<h1>January 2017</h1>
+				</section>
+				<section>
 					<section>
 						<h2>Back up, what is a Linux Container?</h2>
 						<ul>
@@ -61,13 +72,94 @@
 								Tool that can package an application and its dependencies in a virtual container that can run on any Linux server.
 							</li>
 							<li>
-								A way to manage your containers
+								A way to model your containers and more easily manage them.
 							</li>
 						</ul>
 					</section>
 					<section>
 						<img src="assets/lxc.png">
 					</section>
+				</section>
+				<section>
+					<h2>Why not containers</h2>
+					<h5>
+						Note that these are primarily historical reasons
+					</h5>
+					<ul>
+						<li>
+							Less secure (though a given container is going to have a lot less to attack)
+						</li>
+						<li>
+							Complex (networking, clustering, etc)
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Why containers</h2>
+					<ul>
+						<li>
+							Lightweight
+						</li>
+						<li>
+							Fast to set up
+						</li>
+						<li>
+							Easy to update/change
+						</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>Components of Docker (and why Docker)</h2>
+						<ul>
+							<li>
+								Docker client and server (AKA Docker Engine)
+							</li>
+							<li>
+								Docker Images
+							</li>
+							<li>
+								Registries
+							</li>
+							<li>
+								Docker Containers
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Docker Engine</h2>
+						<ul>
+							<li>
+								Docker client(s) talk to the docker server (or daemon) to manage Docker images, containers, volumes, and swarms (clusters).
+							</li>
+							<li>
+								Docker CLI, docker compose, docker swarm are all examples of clients.
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Docker images</h2>
+						Containers are launched from images which are in a 'layered' format (every command you run inside a container (or write to a file) is a new layer).
+						These are portable, and easy to share/store/update.
+					</section>
+					<section>
+						<h2>Registries</h2>
+						Docker stores the images in registries. Docker Hub is what we'll be using (you can create your own but we'll get there eventually).
+					</section>
+					<section>
+						<h2>Containers</h2>
+						The main thing we associate with Docker. Via docker engine, you launch an images from a registry.
+					</section>
+				</section>
+				<section>
+					<h3>So what about "traditional" configuration management tools (like Ansible, Chef, etc)</h3>
+					<div>
+						The general consensus seems to be you should not use any of these tools to manage the container image. A given line of ansible, etc would be seen
+						as its own layer and this may not work well.
+					</div>
+					<div>
+						With that said, perhaps there is room for using these tools to manage your deployed containers? Unsure on this...
+					</div>
 				</section>
 			</div>
 		</div>
