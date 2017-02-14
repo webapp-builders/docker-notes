@@ -161,6 +161,77 @@
 						With that said, perhaps there is room for using these tools to manage your deployed containers? Unsure on this...
 					</div>
 				</section>
+				<section>
+					<h2>Install Docker</h2>
+					<a href="https://docs.docker.com/engine/installation/" target="_blank">Instructions</a> on how to install Docker.
+				</section>
+				<section>
+					<section>
+						<h2>CLI Commands</h2>
+						<ul>
+							<li>
+								Type <code>docker</code> to see full list of commands.
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>docker info</code></h2>
+						Gives stats on many things including:
+						<ul>
+							<li>
+								number of containers (running paused, stopped)
+							</li>
+							<li>
+								number of images
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2><code>docker run</code></h2>
+						<ul>
+							<li>
+								Will start running a container.
+							</li>
+							<li>
+								ex. <code>docker run --name webapps_container -i -t ubuntu /bin/bash</code>
+							</li>
+							<li>
+								<ul>
+									<li>
+										-i is interactive flag. Means the container will be kept open for you to run commands.
+									</li>
+									<li>
+										-t is tty (or terminal) flag. Means container will provide interactive shell.
+									</li>
+									<li>
+										--name is to give your container a custom name (docker will generate name otherwise).
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>docker run</code> cont'd</h2>
+						<ul>
+							<li>
+								Container is full fledged ubuntu host. Can ask for hostname, ip address, install apt packages etc.
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2><code>docker ps -a</code></h2>
+					<ul>
+						<li>
+							Let you see a listing of running (and stopped) containers.
+						</li>
+						<li>
+							container_id|image|command|created|status|ports|names
+						</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 
