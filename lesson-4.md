@@ -11,11 +11,10 @@ docker run -i -t ubuntu /bin/bash
   apt-get install apache2
   exit
 
-docker commit <CONTAINER_ID> btmash/apache2 -m "My image with apache" -a "Ashok Modi"
+docker commit <CONTAINER_ID> btmash/apache2 -m "My new ubuntu image with apache" -a "Ashok Modi"
 
 - 'docker images' will now list custom image with namespace
 - 'docker inspect btmash/apache2' will now list comment and author
-
 
 ## dockerfile
 
@@ -26,7 +25,7 @@ FROM ubuntu:16.04
 # This is meta information. Not necessary but still good to have
 MAINTAINER Ashok Modi 'btmash@gmail.com'
 # Use an environment variable if you want to easily get packages updated
-ENV REFRESHED_AT 2017-04-19
+ENV REFRESHED_AT 2017-04-20
 # The real meat and bones
 RUN apt-get update; apt-get install -y nginx
 RUN echo 'My first web page' > /var/www/html/index.html
